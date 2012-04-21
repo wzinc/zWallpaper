@@ -1,0 +1,3500 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BZFramework</name>
+    </assembly>
+    <members>
+        <member name="F:BZFramework.Util.StringUtil.Ellipsis">
+            <summary>
+            Ellipsis (...)
+            </summary>
+        </member>
+        <member name="T:BZFramework.Math.RomanNumeral">
+            <summary>
+            Defines a light-weight class for handling Roman Numerals as objects. Also, handles adding, subtracting, multiplying, and dividing.
+            </summary>
+        </member>
+        <member name="F:BZFramework.Math.RomanNumeral.MaxValue">
+            <summary>
+            Maximum value.
+            </summary>
+        </member>
+        <member name="F:BZFramework.Math.RomanNumeral.MinValue">
+            <summary>
+            Minimum value.
+            </summary>
+        </member>
+        <member name="F:BZFramework.Math.RomanNumeral.SubtractionThreshold">
+            <summary>
+            The subtraction threshold dictates the manimum value of the lower division before another character of the higher division,
+            preceeded by subtractors, is added. (i.e. 1800, with SubtractionThreshold of 1, is 'MCCC'; 1800, with SubtractionThreshold of 2, is 'MCCM')
+            </summary>
+        </member>
+        <member name="M:BZFramework.Math.RomanNumeral.#ctor(System.UInt16)">
+            <summary>
+            Creates a new RomanNumeral instance.
+            </summary>
+            <param name="value">value</param>
+        </member>
+        <member name="M:BZFramework.Math.RomanNumeral.ToString">
+            <summary>
+            Roman Numeral value in string form.
+            </summary>
+            <returns>Roman Numeral string</returns>
+        </member>
+        <member name="M:BZFramework.Math.RomanNumeral.FromString(System.String)">
+            <summary>
+            Converts a Roman Numeral string to a RomanNumeral object.
+            </summary>
+            <param name="romanNumeral">Roman Numeral string</param>
+            <returns>RomanNumeral object</returns>
+        </member>
+        <member name="M:BZFramework.Math.RomanNumeral.op_Addition(BZFramework.Math.RomanNumeral,BZFramework.Math.RomanNumeral)">
+            <summary>
+            Adds two RomanNumeral objects.
+            </summary>
+            <param name="a">RomanNumeral a</param>
+            <param name="b">RomanNumeral b</param>
+            <returns>added RomanNumerals</returns>
+        </member>
+        <member name="M:BZFramework.Math.RomanNumeral.op_Subtraction(BZFramework.Math.RomanNumeral,BZFramework.Math.RomanNumeral)">
+            <summary>
+            Subtracts two RomanNumeral objects.
+            </summary>
+            <param name="a">RomanNumeral a</param>
+            <param name="b">RomanNumeral b</param>
+            <returns>subtracted RomanNumerals</returns>
+        </member>
+        <member name="M:BZFramework.Math.RomanNumeral.op_Multiply(BZFramework.Math.RomanNumeral,BZFramework.Math.RomanNumeral)">
+            <summary>
+            Multiplies two RomanNumeral objects.
+            </summary>
+            <param name="a">RomanNumeral a</param>
+            <param name="b">RomanNumeral b</param>
+            <returns>multiplied RomanNumerals</returns>
+        </member>
+        <member name="M:BZFramework.Math.RomanNumeral.op_Division(BZFramework.Math.RomanNumeral,BZFramework.Math.RomanNumeral)">
+            <summary>
+            Divides two RomanNumeral objects.
+            </summary>
+            <param name="a">RomanNumeral a</param>
+            <param name="b">RomanNumeral b</param>
+            <returns>divided RomanNumerals</returns>
+        </member>
+        <member name="M:BZFramework.Math.RomanNumeral.op_GreaterThan(BZFramework.Math.RomanNumeral,BZFramework.Math.RomanNumeral)">
+            <summary>
+            Greater-than operator.
+            </summary>
+            <param name="a">RomanNumeral a</param>
+            <param name="b">RomanNumeral b</param>
+            <returns>a value indicating whether or not RomanNumeral a is greater-than RomanNumeral b</returns>
+        </member>
+        <member name="M:BZFramework.Math.RomanNumeral.op_LessThan(BZFramework.Math.RomanNumeral,BZFramework.Math.RomanNumeral)">
+            <summary>
+            Less-than operator.
+            </summary>
+            <param name="a">RomanNumeral a</param>
+            <param name="b">RomanNumeral b</param>
+            <returns>a value indicating whether or not RomanNumeral a is less-than RomanNumeral b</returns>
+        </member>
+        <member name="P:BZFramework.Math.RomanNumeral.Value">
+            <summary>
+            Gets or sets the number value.
+            </summary>
+        </member>
+        <member name="P:BZFramework.Math.RomanNumeral.Numeral">
+            <summary>
+            Gets the numeral string.
+            </summary>
+        </member>
+        <member name="T:BZFramework.Forms.Win32Interop">
+            <summary>
+            Class for external methods.
+            </summary>
+        </member>
+        <member name="F:BZFramework.Forms.Win32Interop.ULW_COLORKEY">
+            <summary>
+            ULW_COLORKEY
+            </summary>
+        </member>
+        <member name="F:BZFramework.Forms.Win32Interop.ULW_ALPHA">
+            <summary>
+            ULW_ALPHA
+            </summary>
+        </member>
+        <member name="F:BZFramework.Forms.Win32Interop.ULW_OPAQUE">
+            <summary>
+            ULW_OPAQUE
+            </summary>
+        </member>
+        <member name="F:BZFramework.Forms.Win32Interop.AC_SRC_OVER">
+            <summary>
+            AC_SRC_OVER
+            </summary>
+        </member>
+        <member name="F:BZFramework.Forms.Win32Interop.AC_SRC_ALPHA">
+            <summary>
+            AC_SRC_ALPHA
+            </summary>
+        </member>
+        <member name="M:BZFramework.Forms.Win32Interop.UpdateLayeredWindow(System.IntPtr,System.IntPtr,BZFramework.Forms.Win32Interop.Point@,BZFramework.Forms.Win32Interop.Size@,System.IntPtr,BZFramework.Forms.Win32Interop.Point@,System.Int32,BZFramework.Forms.Win32Interop.BLENDFUNCTION@,System.Int32)">
+            <summary>
+            Updates a natively drawn image.
+            </summary>
+            <param name="hWind">window handle</param>
+            <param name="hdcDat">hdc data handle</param>
+            <param name="pptDat">start point</param>
+            <param name="psize">draw size</param>
+            <param name="hdcSrc">hdc src handle</param>
+            <param name="pprSrc">source point</param>
+            <param name="crKey">cr key</param>
+            <param name="pblend">blend mode</param>
+            <param name="dwFlags">drawing flags</param>
+            <returns>a value indicating whether or not the drawing was updated</returns>
+        </member>
+        <member name="M:BZFramework.Forms.Win32Interop.GetDC(System.IntPtr)">
+            <summary>
+            Gets a DC.
+            </summary>
+            <param name="hWind">window handle</param>
+            <returns>DC handle</returns>
+        </member>
+        <member name="M:BZFramework.Forms.Win32Interop.ReleaseDC(System.IntPtr,System.IntPtr)">
+            <summary>
+            Releases a DC.
+            </summary>
+            <param name="hWind">window handle</param>
+            <param name="hDC">DC handle</param>
+            <returns>release value</returns>
+        </member>
+        <member name="M:BZFramework.Forms.Win32Interop.CreateCompatibleDC(System.IntPtr)">
+            <summary>
+            Creates a compatible DC.
+            </summary>
+            <param name="hDC">DC handle</param>
+            <returns>DC handle</returns>
+        </member>
+        <member name="M:BZFramework.Forms.Win32Interop.DeleteDC(System.IntPtr)">
+            <summary>
+            Deletes a DC.
+            </summary>
+            <param name="hDC">DC handle</param>
+            <returns>a value indicating whether or not the DC was deleted</returns>
+        </member>
+        <member name="M:BZFramework.Forms.Win32Interop.SelectObject(System.IntPtr,System.IntPtr)">
+            <summary>
+            Selectes an object.
+            </summary>
+            <param name="hDC">DC handle</param>
+            <param name="hObject">object handle</param>
+            <returns>object handle</returns>
+        </member>
+        <member name="M:BZFramework.Forms.Win32Interop.DeleteObject(System.IntPtr)">
+            <summary>
+            Deletes an object.
+            </summary>
+            <param name="hObject">object handle</param>
+            <returns>a value indicating whether or not the object was deleted</returns>
+        </member>
+        <member name="T:BZFramework.Forms.Win32Interop.Bool">
+            <summary>
+            Boolean enumeration.
+            </summary>
+        </member>
+        <member name="F:BZFramework.Forms.Win32Interop.Bool.False">
+            <summary>
+            False
+            </summary>
+        </member>
+        <member name="F:BZFramework.Forms.Win32Interop.Bool.True">
+            <summary>
+            True
+            </summary>
+        </member>
+        <member name="T:BZFramework.Forms.Win32Interop.Point">
+            <summary>
+            A Point struct for working with native libraries.
+            </summary>
+        </member>
+        <member name="F:BZFramework.Forms.Win32Interop.Point.X">
+            <summary>
+            X
+            </summary>
+        </member>
+        <member name="F:BZFramework.Forms.Win32Interop.Point.Y">
+            <summary>
+            Y
+            </summary>
+        </member>
+        <member name="M:BZFramework.Forms.Win32Interop.Point.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates a Point instance.
+            </summary>
+            <param name="x">x</param>
+            <param name="y">y</param>
+        </member>
+        <member name="T:BZFramework.Forms.Win32Interop.Size">
+            <summary>
+            A Size struct for working with native libraries.
+            </summary>
+        </member>
+        <member name="F:BZFramework.Forms.Win32Interop.Size.X">
+            <summary>
+            X
+            </summary>
+        </member>
+        <member name="F:BZFramework.Forms.Win32Interop.Size.Y">
+            <summary>
+            Y
+            </summary>
+        </member>
+        <member name="M:BZFramework.Forms.Win32Interop.Size.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates a Size instance.
+            </summary>
+            <param name="x">x</param>
+            <param name="y">y</param>
+        </member>
+        <member name="T:BZFramework.Forms.Win32Interop.ARGB">
+            <summary>
+            An ARGB struct for working with native libraries.
+            </summary>
+        </member>
+        <member name="F:BZFramework.Forms.Win32Interop.ARGB.Blue">
+            <summary>
+            Blue value
+            </summary>
+        </member>
+        <member name="F:BZFramework.Forms.Win32Interop.ARGB.Green">
+            <summary>
+            Green value
+            </summary>
+        </member>
+        <member name="F:BZFramework.Forms.Win32Interop.ARGB.Red">
+            <summary>
+            Red value
+            </summary>
+        </member>
+        <member name="F:BZFramework.Forms.Win32Interop.ARGB.Alpha">
+            <summary>
+            Alpha value
+            </summary>
+        </member>
+        <member name="T:BZFramework.Forms.Win32Interop.BLENDFUNCTION">
+            <summary>
+            An BLENDFUNCTION struct for working with native libraries.
+            </summary>
+        </member>
+        <member name="F:BZFramework.Forms.Win32Interop.BLENDFUNCTION.BlendOp">
+            <summary>
+            Blend Op byte
+            </summary>
+        </member>
+        <member name="F:BZFramework.Forms.Win32Interop.BLENDFUNCTION.BlendFlags">
+            <summary>
+            Blend Flags byte
+            </summary>
+        </member>
+        <member name="F:BZFramework.Forms.Win32Interop.BLENDFUNCTION.SourceConstantAlpha">
+            <summary>
+            Source Constant Alpha byte
+            </summary>
+        </member>
+        <member name="F:BZFramework.Forms.Win32Interop.BLENDFUNCTION.AlphaFormat">
+            <summary>
+            Alpha Format byte
+            </summary>
+        </member>
+        <member name="T:BZFramework.Forms.SplashScreen">
+            <summary>
+            Splash Screen shows logo on start-up.
+            
+            Derived from Godinho Lopes's PerPixelAlphaForm.
+            http://www.codeproject.com/KB/GDI-plus/perpxalpha_sharp.aspx
+            </summary>
+        </member>
+        <member name="M:BZFramework.Forms.SplashScreen.#ctor">
+            <summary>
+            Creates a Splash instance.
+            </summary>
+        </member>
+        <member name="M:BZFramework.Forms.SplashScreen.ShowSplash(System.Drawing.Bitmap,System.Windows.Forms.FormStartPosition)">
+            <summary>
+            Shows the splash screen.
+            </summary>
+            <param name="image">image to display</param>
+            <param name="startPosition">initial start position</param>
+        </member>
+        <member name="M:BZFramework.Forms.SplashScreen.ShowSplash(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            Shows the splash screen.
+            </summary>
+            <param name="image">image to display</param>
+            <param name="top">distance from top</param>
+            <param name="left">distance from left</param>
+        </member>
+        <member name="M:BZFramework.Forms.SplashScreen.ShowSplashUtilityApp(System.Drawing.Bitmap)">
+            <summary>
+            Shows the splash screen for a utility app, down in the corner.
+            </summary>
+            <param name="image">image to display</param>
+        </member>
+        <member name="M:BZFramework.Forms.SplashScreen.OnShown(System.EventArgs)">
+            <summary>
+            Shows splash screen.
+            </summary>
+            <param name="e">EventArgs object</param>
+        </member>
+        <member name="P:BZFramework.Forms.SplashScreen.CreateParams">
+            <summary>
+            Gets form parameters.
+            </summary>
+        </member>
+        <member name="P:BZFramework.Forms.SplashScreen.Image">
+            <summary>
+            Gets or sets the splash-screen image.
+            </summary>
+        </member>
+        <member name="P:BZFramework.Forms.SplashScreen.DisplayTimeout">
+            <summary>
+            Gets or sets the display timeout.
+            </summary>
+        </member>
+        <member name="P:BZFramework.Math.VectorC.Quadrant">
+            <summary>
+                   |
+              II   |  I
+                   |
+            ---------------
+                   |
+              III  |  IV
+                   |
+            </summary>
+        </member>
+        <member name="T:BZFramework.Security.Encryption`1">
+            <summary>
+            Static encryption class that supports providers derived from IEncryptionProvider.
+            </summary>
+            <typeparam name="T">a class that implements IEncryptionProvider</typeparam>
+        </member>
+        <member name="T:BZFramework.Security.Encryption">
+            <summary>
+            Static encryption class that uses the DefaultEncryptionProvider class.
+            </summary>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ReportingService2005">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.#ctor(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListSecureMethods">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListSecureMethodsAsync">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListSecureMethodsAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateBatch">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateBatchAsync">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateBatchAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CancelBatch">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CancelBatchAsync">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CancelBatchAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ExecuteBatch">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ExecuteBatchAsync">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ExecuteBatchAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetSystemProperties(BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetSystemPropertiesAsync(BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetSystemPropertiesAsync(BZFramework.ReportService2005.Property[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetSystemProperties(BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetSystemPropertiesAsync(BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetSystemPropertiesAsync(BZFramework.ReportService2005.Property[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.DeleteItem(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.DeleteItemAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.DeleteItemAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.MoveItem(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.MoveItemAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.MoveItemAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListChildren(System.String,System.Boolean)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListChildrenAsync(System.String,System.Boolean)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListChildrenAsync(System.String,System.Boolean,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListDependentItems(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListDependentItemsAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListDependentItemsAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetProperties(System.String,BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetPropertiesAsync(System.String,BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetPropertiesAsync(System.String,BZFramework.ReportService2005.Property[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetProperties(System.String,BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetPropertiesAsync(System.String,BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetPropertiesAsync(System.String,BZFramework.ReportService2005.Property[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetItemType(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetItemTypeAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetItemTypeAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateFolder(System.String,System.String,BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateFolderAsync(System.String,System.String,BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateFolderAsync(System.String,System.String,BZFramework.ReportService2005.Property[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateReport(System.String,System.String,System.Boolean,System.Byte[],BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateReportAsync(System.String,System.String,System.Boolean,System.Byte[],BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateReportAsync(System.String,System.String,System.Boolean,System.Byte[],BZFramework.ReportService2005.Property[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetReportDefinition(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetReportDefinitionAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetReportDefinitionAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetReportDefinition(System.String,System.Byte[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetReportDefinitionAsync(System.String,System.Byte[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetReportDefinitionAsync(System.String,System.Byte[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateResource(System.String,System.String,System.Boolean,System.Byte[],System.String,BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateResourceAsync(System.String,System.String,System.Boolean,System.Byte[],System.String,BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateResourceAsync(System.String,System.String,System.Boolean,System.Byte[],System.String,BZFramework.ReportService2005.Property[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetResourceContents(System.String,System.Byte[],System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetResourceContentsAsync(System.String,System.Byte[],System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetResourceContentsAsync(System.String,System.Byte[],System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetResourceContents(System.String,System.String@)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetResourceContentsAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetResourceContentsAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetReportParameters(System.String,System.String,System.Boolean,BZFramework.ReportService2005.ParameterValue[],BZFramework.ReportService2005.DataSourceCredentials[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetReportParametersAsync(System.String,System.String,System.Boolean,BZFramework.ReportService2005.ParameterValue[],BZFramework.ReportService2005.DataSourceCredentials[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetReportParametersAsync(System.String,System.String,System.Boolean,BZFramework.ReportService2005.ParameterValue[],BZFramework.ReportService2005.DataSourceCredentials[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetReportParameters(System.String,BZFramework.ReportService2005.ReportParameter[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetReportParametersAsync(System.String,BZFramework.ReportService2005.ReportParameter[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetReportParametersAsync(System.String,BZFramework.ReportService2005.ReportParameter[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateLinkedReport(System.String,System.String,System.String,BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateLinkedReportAsync(System.String,System.String,System.String,BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateLinkedReportAsync(System.String,System.String,System.String,BZFramework.ReportService2005.Property[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetReportLink(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetReportLinkAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetReportLinkAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetReportLink(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetReportLinkAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetReportLinkAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetRenderResource(System.String,System.String,System.String@)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetRenderResourceAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetRenderResourceAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetExecutionOptions(System.String,BZFramework.ReportService2005.ExecutionSettingEnum,BZFramework.ReportService2005.ScheduleDefinitionOrReference)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetExecutionOptionsAsync(System.String,BZFramework.ReportService2005.ExecutionSettingEnum,BZFramework.ReportService2005.ScheduleDefinitionOrReference)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetExecutionOptionsAsync(System.String,BZFramework.ReportService2005.ExecutionSettingEnum,BZFramework.ReportService2005.ScheduleDefinitionOrReference,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetExecutionOptions(System.String,BZFramework.ReportService2005.ScheduleDefinitionOrReference@)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetExecutionOptionsAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetExecutionOptionsAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetCacheOptions(System.String,System.Boolean,BZFramework.ReportService2005.ExpirationDefinition)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetCacheOptionsAsync(System.String,System.Boolean,BZFramework.ReportService2005.ExpirationDefinition)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetCacheOptionsAsync(System.String,System.Boolean,BZFramework.ReportService2005.ExpirationDefinition,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetCacheOptions(System.String,BZFramework.ReportService2005.ExpirationDefinition@)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetCacheOptionsAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetCacheOptionsAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.UpdateReportExecutionSnapshot(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.UpdateReportExecutionSnapshotAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.UpdateReportExecutionSnapshotAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.FlushCache(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.FlushCacheAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.FlushCacheAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListJobs">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListJobsAsync">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListJobsAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CancelJob(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CancelJobAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CancelJobAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateDataSource(System.String,System.String,System.Boolean,BZFramework.ReportService2005.DataSourceDefinition,BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateDataSourceAsync(System.String,System.String,System.Boolean,BZFramework.ReportService2005.DataSourceDefinition,BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateDataSourceAsync(System.String,System.String,System.Boolean,BZFramework.ReportService2005.DataSourceDefinition,BZFramework.ReportService2005.Property[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetDataSourceContents(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetDataSourceContentsAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetDataSourceContentsAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetDataSourceContents(System.String,BZFramework.ReportService2005.DataSourceDefinition)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetDataSourceContentsAsync(System.String,BZFramework.ReportService2005.DataSourceDefinition)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetDataSourceContentsAsync(System.String,BZFramework.ReportService2005.DataSourceDefinition,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.EnableDataSource(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.EnableDataSourceAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.EnableDataSourceAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.DisableDataSource(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.DisableDataSourceAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.DisableDataSourceAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetItemDataSources(System.String,BZFramework.ReportService2005.DataSource[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetItemDataSourcesAsync(System.String,BZFramework.ReportService2005.DataSource[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetItemDataSourcesAsync(System.String,BZFramework.ReportService2005.DataSource[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetItemDataSources(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetItemDataSourcesAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetItemDataSourcesAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetItemDataSourcePrompts(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetItemDataSourcePromptsAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetItemDataSourcePromptsAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateReportHistorySnapshot(System.String,BZFramework.ReportService2005.Warning[]@)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateReportHistorySnapshotAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateReportHistorySnapshotAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetReportHistoryOptions(System.String,System.Boolean,System.Boolean,BZFramework.ReportService2005.ScheduleDefinitionOrReference)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetReportHistoryOptionsAsync(System.String,System.Boolean,System.Boolean,BZFramework.ReportService2005.ScheduleDefinitionOrReference)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetReportHistoryOptionsAsync(System.String,System.Boolean,System.Boolean,BZFramework.ReportService2005.ScheduleDefinitionOrReference,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetReportHistoryOptions(System.String,System.Boolean@,BZFramework.ReportService2005.ScheduleDefinitionOrReference@)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetReportHistoryOptionsAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetReportHistoryOptionsAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetReportHistoryLimit(System.String,System.Boolean,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetReportHistoryLimitAsync(System.String,System.Boolean,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetReportHistoryLimitAsync(System.String,System.Boolean,System.Int32,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetReportHistoryLimit(System.String,System.Boolean@,System.Int32@)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetReportHistoryLimitAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetReportHistoryLimitAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListReportHistory(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListReportHistoryAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListReportHistoryAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.DeleteReportHistorySnapshot(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.DeleteReportHistorySnapshotAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.DeleteReportHistorySnapshotAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.FindItems(System.String,BZFramework.ReportService2005.BooleanOperatorEnum,BZFramework.ReportService2005.SearchCondition[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.FindItemsAsync(System.String,BZFramework.ReportService2005.BooleanOperatorEnum,BZFramework.ReportService2005.SearchCondition[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.FindItemsAsync(System.String,BZFramework.ReportService2005.BooleanOperatorEnum,BZFramework.ReportService2005.SearchCondition[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateSchedule(System.String,BZFramework.ReportService2005.ScheduleDefinition)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateScheduleAsync(System.String,BZFramework.ReportService2005.ScheduleDefinition)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateScheduleAsync(System.String,BZFramework.ReportService2005.ScheduleDefinition,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.DeleteSchedule(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.DeleteScheduleAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.DeleteScheduleAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetScheduleProperties(System.String,System.String,BZFramework.ReportService2005.ScheduleDefinition)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetSchedulePropertiesAsync(System.String,System.String,BZFramework.ReportService2005.ScheduleDefinition)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetSchedulePropertiesAsync(System.String,System.String,BZFramework.ReportService2005.ScheduleDefinition,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetScheduleProperties(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetSchedulePropertiesAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetSchedulePropertiesAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListScheduledReports(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListScheduledReportsAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListScheduledReportsAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListSchedules">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListSchedulesAsync">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListSchedulesAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.PauseSchedule(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.PauseScheduleAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.PauseScheduleAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ResumeSchedule(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ResumeScheduleAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ResumeScheduleAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateSubscription(System.String,BZFramework.ReportService2005.ExtensionSettings,System.String,System.String,System.String,BZFramework.ReportService2005.ParameterValue[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateSubscriptionAsync(System.String,BZFramework.ReportService2005.ExtensionSettings,System.String,System.String,System.String,BZFramework.ReportService2005.ParameterValue[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateSubscriptionAsync(System.String,BZFramework.ReportService2005.ExtensionSettings,System.String,System.String,System.String,BZFramework.ReportService2005.ParameterValue[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateDataDrivenSubscription(System.String,BZFramework.ReportService2005.ExtensionSettings,BZFramework.ReportService2005.DataRetrievalPlan,System.String,System.String,System.String,BZFramework.ReportService2005.ParameterValueOrFieldReference[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateDataDrivenSubscriptionAsync(System.String,BZFramework.ReportService2005.ExtensionSettings,BZFramework.ReportService2005.DataRetrievalPlan,System.String,System.String,System.String,BZFramework.ReportService2005.ParameterValueOrFieldReference[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateDataDrivenSubscriptionAsync(System.String,BZFramework.ReportService2005.ExtensionSettings,BZFramework.ReportService2005.DataRetrievalPlan,System.String,System.String,System.String,BZFramework.ReportService2005.ParameterValueOrFieldReference[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetSubscriptionProperties(System.String,BZFramework.ReportService2005.ExtensionSettings,System.String,System.String,System.String,BZFramework.ReportService2005.ParameterValue[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetSubscriptionPropertiesAsync(System.String,BZFramework.ReportService2005.ExtensionSettings,System.String,System.String,System.String,BZFramework.ReportService2005.ParameterValue[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetSubscriptionPropertiesAsync(System.String,BZFramework.ReportService2005.ExtensionSettings,System.String,System.String,System.String,BZFramework.ReportService2005.ParameterValue[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetDataDrivenSubscriptionProperties(System.String,BZFramework.ReportService2005.ExtensionSettings,BZFramework.ReportService2005.DataRetrievalPlan,System.String,System.String,System.String,BZFramework.ReportService2005.ParameterValueOrFieldReference[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetDataDrivenSubscriptionPropertiesAsync(System.String,BZFramework.ReportService2005.ExtensionSettings,BZFramework.ReportService2005.DataRetrievalPlan,System.String,System.String,System.String,BZFramework.ReportService2005.ParameterValueOrFieldReference[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetDataDrivenSubscriptionPropertiesAsync(System.String,BZFramework.ReportService2005.ExtensionSettings,BZFramework.ReportService2005.DataRetrievalPlan,System.String,System.String,System.String,BZFramework.ReportService2005.ParameterValueOrFieldReference[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetSubscriptionProperties(System.String,BZFramework.ReportService2005.ExtensionSettings@,System.String@,BZFramework.ReportService2005.ActiveState@,System.String@,System.String@,System.String@,BZFramework.ReportService2005.ParameterValue[]@)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetSubscriptionPropertiesAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetSubscriptionPropertiesAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetDataDrivenSubscriptionProperties(System.String,BZFramework.ReportService2005.ExtensionSettings@,BZFramework.ReportService2005.DataRetrievalPlan@,System.String@,BZFramework.ReportService2005.ActiveState@,System.String@,System.String@,System.String@,BZFramework.ReportService2005.ParameterValueOrFieldReference[]@)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetDataDrivenSubscriptionPropertiesAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetDataDrivenSubscriptionPropertiesAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.DeleteSubscription(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.DeleteSubscriptionAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.DeleteSubscriptionAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.PrepareQuery(BZFramework.ReportService2005.DataSource,BZFramework.ReportService2005.DataSetDefinition,System.Boolean@,System.String[]@)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.PrepareQueryAsync(BZFramework.ReportService2005.DataSource,BZFramework.ReportService2005.DataSetDefinition)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.PrepareQueryAsync(BZFramework.ReportService2005.DataSource,BZFramework.ReportService2005.DataSetDefinition,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetExtensionSettings(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetExtensionSettingsAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetExtensionSettingsAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ValidateExtensionSettings(System.String,BZFramework.ReportService2005.ParameterValueOrFieldReference[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ValidateExtensionSettingsAsync(System.String,BZFramework.ReportService2005.ParameterValueOrFieldReference[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ValidateExtensionSettingsAsync(System.String,BZFramework.ReportService2005.ParameterValueOrFieldReference[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListSubscriptions(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListSubscriptionsAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListSubscriptionsAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListSubscriptionsUsingDataSource(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListSubscriptionsUsingDataSourceAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListSubscriptionsUsingDataSourceAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListExtensions(BZFramework.ReportService2005.ExtensionTypeEnum)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListExtensionsAsync(BZFramework.ReportService2005.ExtensionTypeEnum)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListExtensionsAsync(BZFramework.ReportService2005.ExtensionTypeEnum,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListEvents">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListEventsAsync">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListEventsAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.FireEvent(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.FireEventAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.FireEventAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListTasks(BZFramework.ReportService2005.SecurityScopeEnum)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListTasksAsync(BZFramework.ReportService2005.SecurityScopeEnum)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListTasksAsync(BZFramework.ReportService2005.SecurityScopeEnum,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListRoles(BZFramework.ReportService2005.SecurityScopeEnum)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListRolesAsync(BZFramework.ReportService2005.SecurityScopeEnum)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListRolesAsync(BZFramework.ReportService2005.SecurityScopeEnum,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateRole(System.String,System.String,BZFramework.ReportService2005.Task[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateRoleAsync(System.String,System.String,BZFramework.ReportService2005.Task[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateRoleAsync(System.String,System.String,BZFramework.ReportService2005.Task[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.DeleteRole(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.DeleteRoleAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.DeleteRoleAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetRoleProperties(System.String,System.String@)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetRolePropertiesAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetRolePropertiesAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetRoleProperties(System.String,System.String,BZFramework.ReportService2005.Task[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetRolePropertiesAsync(System.String,System.String,BZFramework.ReportService2005.Task[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetRolePropertiesAsync(System.String,System.String,BZFramework.ReportService2005.Task[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetSystemPolicies">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetSystemPoliciesAsync">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetSystemPoliciesAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetSystemPolicies(BZFramework.ReportService2005.Policy[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetSystemPoliciesAsync(BZFramework.ReportService2005.Policy[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetSystemPoliciesAsync(BZFramework.ReportService2005.Policy[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetPolicies(System.String,System.Boolean@)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetPoliciesAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetPoliciesAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetPolicies(System.String,BZFramework.ReportService2005.Policy[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetPoliciesAsync(System.String,BZFramework.ReportService2005.Policy[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetPoliciesAsync(System.String,BZFramework.ReportService2005.Policy[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.InheritParentSecurity(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.InheritParentSecurityAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.InheritParentSecurityAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetSystemPermissions">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetSystemPermissionsAsync">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetSystemPermissionsAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetPermissions(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetPermissionsAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetPermissionsAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.LogonUser(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.LogonUserAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.LogonUserAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.Logoff">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.LogoffAsync">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.LogoffAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateModel(System.String,System.String,System.Byte[],BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateModelAsync(System.String,System.String,System.Byte[],BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CreateModelAsync(System.String,System.String,System.Byte[],BZFramework.ReportService2005.Property[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetModelDefinition(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetModelDefinitionAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetModelDefinitionAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetModelDefinition(System.String,System.Byte[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetModelDefinitionAsync(System.String,System.Byte[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetModelDefinitionAsync(System.String,System.Byte[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListModelPerspectives(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListModelPerspectivesAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListModelPerspectivesAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetUserModel(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetUserModelAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetUserModelAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListModelItemChildren(System.String,System.String,System.Boolean)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListModelItemChildrenAsync(System.String,System.String,System.Boolean)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListModelItemChildrenAsync(System.String,System.String,System.Boolean,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetModelItemPermissions(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetModelItemPermissionsAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetModelItemPermissionsAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetModelItemPolicies(System.String,System.String,System.Boolean@)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetModelItemPoliciesAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GetModelItemPoliciesAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetModelItemPolicies(System.String,System.String,BZFramework.ReportService2005.Policy[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetModelItemPoliciesAsync(System.String,System.String,BZFramework.ReportService2005.Policy[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetModelItemPoliciesAsync(System.String,System.String,BZFramework.ReportService2005.Policy[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.InheritModelItemParentSecurity(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.InheritModelItemParentSecurityAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.InheritModelItemParentSecurityAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.RemoveAllModelItemPolicies(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.RemoveAllModelItemPoliciesAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.RemoveAllModelItemPoliciesAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetModelDrillthroughReports(System.String,System.String,BZFramework.ReportService2005.ModelDrillthroughReport[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetModelDrillthroughReportsAsync(System.String,System.String,BZFramework.ReportService2005.ModelDrillthroughReport[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.SetModelDrillthroughReportsAsync(System.String,System.String,BZFramework.ReportService2005.ModelDrillthroughReport[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListModelDrillthroughReports(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListModelDrillthroughReportsAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.ListModelDrillthroughReportsAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GenerateModel(System.String,System.String,System.String,BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GenerateModelAsync(System.String,System.String,System.String,BZFramework.ReportService2005.Property[])">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.GenerateModelAsync(System.String,System.String,System.String,BZFramework.ReportService2005.Property[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.RegenerateModel(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.RegenerateModelAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.RegenerateModelAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BZFramework.ReportService2005.ReportingService2005.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.ListSecureMethodsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.CreateBatchCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.CancelBatchCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.ExecuteBatchCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetSystemPropertiesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetSystemPropertiesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.DeleteItemCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.MoveItemCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.ListChildrenCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.ListDependentItemsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetPropertiesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetPropertiesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetItemTypeCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.CreateFolderCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.CreateReportCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetReportDefinitionCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetReportDefinitionCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.CreateResourceCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetResourceContentsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetResourceContentsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetReportParametersCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetReportParametersCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.CreateLinkedReportCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetReportLinkCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetReportLinkCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetRenderResourceCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetExecutionOptionsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetExecutionOptionsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetCacheOptionsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetCacheOptionsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.UpdateReportExecutionSnapshotCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.FlushCacheCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.ListJobsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.CancelJobCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.CreateDataSourceCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetDataSourceContentsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetDataSourceContentsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.EnableDataSourceCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.DisableDataSourceCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetItemDataSourcesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetItemDataSourcesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetItemDataSourcePromptsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.CreateReportHistorySnapshotCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetReportHistoryOptionsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetReportHistoryOptionsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetReportHistoryLimitCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetReportHistoryLimitCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.ListReportHistoryCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.DeleteReportHistorySnapshotCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.FindItemsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.CreateScheduleCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.DeleteScheduleCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetSchedulePropertiesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetSchedulePropertiesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.ListScheduledReportsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.ListSchedulesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.PauseScheduleCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.ResumeScheduleCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.CreateSubscriptionCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.CreateDataDrivenSubscriptionCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetSubscriptionPropertiesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetDataDrivenSubscriptionPropertiesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetSubscriptionPropertiesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetDataDrivenSubscriptionPropertiesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.DeleteSubscriptionCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.PrepareQueryCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetExtensionSettingsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.ValidateExtensionSettingsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.ListSubscriptionsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.ListSubscriptionsUsingDataSourceCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.ListExtensionsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.ListEventsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.FireEventCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.ListTasksCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.ListRolesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.CreateRoleCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.DeleteRoleCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetRolePropertiesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetRolePropertiesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetSystemPoliciesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetSystemPoliciesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetPoliciesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetPoliciesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.InheritParentSecurityCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetSystemPermissionsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetPermissionsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.LogonUserCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.LogoffCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.CreateModelCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetModelDefinitionCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetModelDefinitionCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.ListModelPerspectivesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetUserModelCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.ListModelItemChildrenCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetModelItemPermissionsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GetModelItemPoliciesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetModelItemPoliciesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.InheritModelItemParentSecurityCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.RemoveAllModelItemPoliciesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.SetModelDrillthroughReportsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.ListModelDrillthroughReportsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.GenerateModelCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BZFramework.ReportService2005.ReportingService2005.RegenerateModelCompleted">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ServerInfoHeader">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ServerInfoHeader.ReportServerVersionNumber">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ServerInfoHeader.ReportServerEdition">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ServerInfoHeader.ReportServerVersion">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ServerInfoHeader.ReportServerDateTime">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ServerInfoHeader.AnyAttr">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ModelDrillthroughReport">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ModelDrillthroughReport.Path">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ModelDrillthroughReport.Type">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.DrillthroughType">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.DrillthroughType.Detail">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.DrillthroughType.List">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ModelItem">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ModelItem.ID">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ModelItem.Name">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ModelItem.Type">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ModelItem.Description">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ModelItem.ModelItems">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ModelItemTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ModelItemTypeEnum.Model">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ModelItemTypeEnum.EntityFolder">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ModelItemTypeEnum.FieldFolder">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ModelItemTypeEnum.Entity">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ModelItemTypeEnum.Attribute">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ModelItemTypeEnum.Role">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ModelPerspective">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ModelPerspective.ID">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ModelPerspective.Name">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ModelPerspective.Description">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ModelCatalogItem">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ModelCatalogItem.Model">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ModelCatalogItem.Description">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ModelCatalogItem.Perspectives">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.Policy">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Policy.GroupUserName">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Policy.Roles">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.Role">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Role.Name">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Role.Description">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.Task">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Task.TaskID">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Task.Name">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Task.Description">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.Event">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Event.Type">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.Extension">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Extension.ExtensionType">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Extension.Name">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Extension.LocalizedName">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Extension.Visible">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Extension.IsModelGenerationSupported">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ExtensionTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ExtensionTypeEnum.Delivery">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ExtensionTypeEnum.Render">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ExtensionTypeEnum.Data">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ExtensionTypeEnum.All">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.Subscription">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Subscription.SubscriptionID">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Subscription.Owner">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Subscription.Path">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Subscription.VirtualPath">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Subscription.Report">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Subscription.DeliverySettings">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Subscription.Description">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Subscription.Status">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Subscription.Active">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Subscription.LastExecuted">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Subscription.LastExecutedSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Subscription.ModifiedBy">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Subscription.ModifiedDate">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Subscription.EventType">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Subscription.IsDataDriven">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ExtensionSettings">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ExtensionSettings.Extension">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ExtensionSettings.ParameterValues">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ParameterFieldReference">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ParameterValueOrFieldReference">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ParameterFieldReference.ParameterName">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ParameterFieldReference.FieldAlias">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ParameterValue">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ParameterValue.Name">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ParameterValue.Value">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ParameterValue.Label">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ActiveState">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ActiveState.DeliveryExtensionRemoved">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ActiveState.DeliveryExtensionRemovedSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ActiveState.SharedDataSourceRemoved">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ActiveState.SharedDataSourceRemovedSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ActiveState.MissingParameterValue">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ActiveState.MissingParameterValueSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ActiveState.InvalidParameterValue">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ActiveState.InvalidParameterValueSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ActiveState.UnknownReportParameter">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ActiveState.UnknownReportParameterSpecified">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ExtensionParameter">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ExtensionParameter.Name">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ExtensionParameter.DisplayName">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ExtensionParameter.Required">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ExtensionParameter.RequiredSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ExtensionParameter.ReadOnly">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ExtensionParameter.Value">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ExtensionParameter.Error">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ExtensionParameter.Encrypted">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ExtensionParameter.IsPassword">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ExtensionParameter.ValidValues">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ValidValue">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ValidValue.Label">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ValidValue.Value">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.QueryDefinition">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.QueryDefinition.CommandType">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.QueryDefinition.CommandText">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.QueryDefinition.Timeout">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.QueryDefinition.TimeoutSpecified">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.Field">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Field.Alias">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Field.Name">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.DataSetDefinition">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSetDefinition.Fields">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSetDefinition.Query">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSetDefinition.CaseSensitivity">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSetDefinition.CaseSensitivitySpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSetDefinition.Collation">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSetDefinition.AccentSensitivity">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSetDefinition.AccentSensitivitySpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSetDefinition.KanatypeSensitivity">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSetDefinition.KanatypeSensitivitySpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSetDefinition.WidthSensitivity">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSetDefinition.WidthSensitivitySpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSetDefinition.Name">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SensitivityEnum">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.SensitivityEnum.True">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.SensitivityEnum.False">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.SensitivityEnum.Auto">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.DataRetrievalPlan">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataRetrievalPlan.Item">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataRetrievalPlan.DataSet">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.DataSourceDefinition">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.DataSourceDefinitionOrReference">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSourceDefinition.Extension">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSourceDefinition.ConnectString">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSourceDefinition.UseOriginalConnectString">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSourceDefinition.OriginalConnectStringExpressionBased">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSourceDefinition.CredentialRetrieval">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSourceDefinition.WindowsCredentials">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSourceDefinition.ImpersonateUser">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSourceDefinition.ImpersonateUserSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSourceDefinition.Prompt">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSourceDefinition.UserName">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSourceDefinition.Password">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSourceDefinition.Enabled">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSourceDefinition.EnabledSpecified">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CredentialRetrievalEnum">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.CredentialRetrievalEnum.Prompt">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.CredentialRetrievalEnum.Store">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.CredentialRetrievalEnum.Integrated">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.CredentialRetrievalEnum.None">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.InvalidDataSourceReference">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.DataSourceReference">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSourceReference.Reference">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.Schedule">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Schedule.ScheduleID">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Schedule.Name">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Schedule.Definition">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Schedule.Description">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Schedule.Creator">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Schedule.NextRunTime">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Schedule.NextRunTimeSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Schedule.LastRunTime">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Schedule.LastRunTimeSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Schedule.ReferencesPresent">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Schedule.State">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ScheduleDefinition">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ScheduleDefinitionOrReference">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ScheduleDefinition.StartDateTime">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ScheduleDefinition.EndDate">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ScheduleDefinition.EndDateSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ScheduleDefinition.Item">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.DailyRecurrence">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.RecurrencePattern">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DailyRecurrence.DaysInterval">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.MonthlyDOWRecurrence">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.MonthlyDOWRecurrence.WhichWeek">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.MonthlyDOWRecurrence.WhichWeekSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.MonthlyDOWRecurrence.DaysOfWeek">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.MonthlyDOWRecurrence.MonthsOfYear">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.WeekNumberEnum">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.WeekNumberEnum.FirstWeek">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.WeekNumberEnum.SecondWeek">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.WeekNumberEnum.ThirdWeek">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.WeekNumberEnum.FourthWeek">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.WeekNumberEnum.LastWeek">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.DaysOfWeekSelector">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DaysOfWeekSelector.Sunday">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DaysOfWeekSelector.Monday">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DaysOfWeekSelector.Tuesday">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DaysOfWeekSelector.Wednesday">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DaysOfWeekSelector.Thursday">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DaysOfWeekSelector.Friday">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DaysOfWeekSelector.Saturday">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.MonthsOfYearSelector">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.MonthsOfYearSelector.January">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.MonthsOfYearSelector.February">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.MonthsOfYearSelector.March">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.MonthsOfYearSelector.April">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.MonthsOfYearSelector.May">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.MonthsOfYearSelector.June">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.MonthsOfYearSelector.July">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.MonthsOfYearSelector.August">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.MonthsOfYearSelector.September">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.MonthsOfYearSelector.October">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.MonthsOfYearSelector.November">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.MonthsOfYearSelector.December">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.MonthlyRecurrence">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.MonthlyRecurrence.Days">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.MonthlyRecurrence.MonthsOfYear">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.WeeklyRecurrence">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.WeeklyRecurrence.WeeksInterval">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.WeeklyRecurrence.WeeksIntervalSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.WeeklyRecurrence.DaysOfWeek">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.MinuteRecurrence">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.MinuteRecurrence.MinutesInterval">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.NoSchedule">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ScheduleReference">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ScheduleReference.ScheduleID">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ScheduleReference.Definition">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ScheduleStateEnum">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ScheduleStateEnum.Ready">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ScheduleStateEnum.Running">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ScheduleStateEnum.Paused">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ScheduleStateEnum.Expired">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ScheduleStateEnum.Failing">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ReportHistorySnapshot">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportHistorySnapshot.HistoryID">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportHistorySnapshot.CreationDate">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportHistorySnapshot.Size">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.DataSourcePrompt">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSourcePrompt.Name">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSourcePrompt.DataSourceID">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSourcePrompt.Prompt">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.DataSource">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSource.Name">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSource.Item">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.Job">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Job.JobID">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Job.Name">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Job.Path">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Job.Description">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Job.Machine">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Job.User">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Job.StartDateTime">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Job.Action">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Job.Type">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Job.Status">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.JobActionEnum">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.JobActionEnum.Render">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.JobActionEnum.SnapshotCreation">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.JobActionEnum.ReportHistoryCreation">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.JobActionEnum.ExecuteQuery">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.JobTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.JobTypeEnum.User">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.JobTypeEnum.System">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.JobStatusEnum">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.JobStatusEnum.New">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.JobStatusEnum.Running">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.JobStatusEnum.CancelRequested">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ExpirationDefinition">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.TimeExpiration">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.TimeExpiration.Minutes">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ScheduleExpiration">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ScheduleExpiration.Item">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ReportParameter">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.Name">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.Type">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.TypeSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.Nullable">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.NullableSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.AllowBlank">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.AllowBlankSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.MultiValue">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.MultiValueSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.QueryParameter">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.QueryParameterSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.Prompt">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.PromptUser">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.PromptUserSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.Dependencies">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.ValidValuesQueryBased">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.ValidValuesQueryBasedSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.ValidValues">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.DefaultValuesQueryBased">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.DefaultValuesQueryBasedSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.DefaultValues">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.State">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.StateSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ReportParameter.ErrorMessage">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ParameterTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ParameterTypeEnum.Boolean">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ParameterTypeEnum.DateTime">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ParameterTypeEnum.Integer">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ParameterTypeEnum.Float">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ParameterTypeEnum.String">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ParameterStateEnum">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ParameterStateEnum.HasValidValue">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ParameterStateEnum.MissingValidValue">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ParameterStateEnum.HasOutstandingDependencies">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ParameterStateEnum.DynamicValuesUnavailable">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.DataSourceCredentials">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSourceCredentials.DataSourceName">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSourceCredentials.UserName">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.DataSourceCredentials.Password">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.Warning">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Warning.Code">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Warning.Severity">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Warning.ObjectName">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Warning.ObjectType">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Warning.Message">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CatalogItem">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CatalogItem.ID">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CatalogItem.Name">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CatalogItem.Path">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CatalogItem.VirtualPath">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CatalogItem.Type">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CatalogItem.Size">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CatalogItem.SizeSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CatalogItem.Description">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CatalogItem.Hidden">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CatalogItem.HiddenSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CatalogItem.CreationDate">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CatalogItem.CreationDateSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CatalogItem.ModifiedDate">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CatalogItem.ModifiedDateSpecified">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CatalogItem.CreatedBy">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CatalogItem.ModifiedBy">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CatalogItem.MimeType">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CatalogItem.ExecutionDate">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CatalogItem.ExecutionDateSpecified">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ItemTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ItemTypeEnum.Unknown">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ItemTypeEnum.Folder">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ItemTypeEnum.Report">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ItemTypeEnum.Resource">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ItemTypeEnum.LinkedReport">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ItemTypeEnum.DataSource">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ItemTypeEnum.Model">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.Property">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Property.Name">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.Property.Value">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SearchCondition">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.SearchCondition.Condition">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.SearchCondition.ConditionSpecified">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ConditionEnum">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ConditionEnum.Contains">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ConditionEnum.Equals">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.BatchHeader">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.BatchHeader.BatchID">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.BatchHeader.AnyAttr">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ItemNamespaceHeader">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ItemNamespaceHeader.ItemNamespace">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ItemNamespaceHeader.AnyAttr">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ItemNamespaceEnum">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ItemNamespaceEnum.PathBased">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ItemNamespaceEnum.GUIDBased">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ExecutionSettingEnum">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ExecutionSettingEnum.Live">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.ExecutionSettingEnum.Snapshot">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.BooleanOperatorEnum">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.BooleanOperatorEnum.And">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.BooleanOperatorEnum.Or">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SecurityScopeEnum">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.SecurityScopeEnum.System">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.SecurityScopeEnum.Catalog">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.SecurityScopeEnum.Model">
+            <remarks/>
+        </member>
+        <member name="F:BZFramework.ReportService2005.SecurityScopeEnum.All">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListSecureMethodsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListSecureMethodsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ListSecureMethodsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CreateBatchCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CreateBatchCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CreateBatchCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CancelBatchCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ExecuteBatchCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetSystemPropertiesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetSystemPropertiesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetSystemPropertiesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetSystemPropertiesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.DeleteItemCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.MoveItemCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListChildrenCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListChildrenCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ListChildrenCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListDependentItemsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListDependentItemsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ListDependentItemsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetPropertiesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetPropertiesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetPropertiesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetPropertiesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetItemTypeCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetItemTypeCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetItemTypeCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CreateFolderCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CreateReportCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CreateReportCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CreateReportCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetReportDefinitionCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetReportDefinitionCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetReportDefinitionCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetReportDefinitionCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetReportDefinitionCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.SetReportDefinitionCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CreateResourceCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetResourceContentsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetResourceContentsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetResourceContentsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetResourceContentsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetResourceContentsCompletedEventArgs.MimeType">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetReportParametersCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetReportParametersCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetReportParametersCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetReportParametersCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CreateLinkedReportCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetReportLinkCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetReportLinkCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetReportLinkCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetReportLinkCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetRenderResourceCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetRenderResourceCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetRenderResourceCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetRenderResourceCompletedEventArgs.MimeType">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetExecutionOptionsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetExecutionOptionsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetExecutionOptionsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetExecutionOptionsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetExecutionOptionsCompletedEventArgs.Item">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetCacheOptionsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetCacheOptionsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetCacheOptionsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetCacheOptionsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetCacheOptionsCompletedEventArgs.Item">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.UpdateReportExecutionSnapshotCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.FlushCacheCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListJobsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListJobsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ListJobsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CancelJobCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CancelJobCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CancelJobCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CreateDataSourceCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetDataSourceContentsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetDataSourceContentsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetDataSourceContentsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetDataSourceContentsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.EnableDataSourceCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.DisableDataSourceCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetItemDataSourcesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetItemDataSourcesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetItemDataSourcesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetItemDataSourcesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetItemDataSourcePromptsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetItemDataSourcePromptsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetItemDataSourcePromptsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CreateReportHistorySnapshotCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CreateReportHistorySnapshotCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CreateReportHistorySnapshotCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CreateReportHistorySnapshotCompletedEventArgs.Warnings">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetReportHistoryOptionsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetReportHistoryOptionsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetReportHistoryOptionsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetReportHistoryOptionsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetReportHistoryOptionsCompletedEventArgs.KeepExecutionSnapshots">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetReportHistoryOptionsCompletedEventArgs.Item">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetReportHistoryLimitCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetReportHistoryLimitCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetReportHistoryLimitCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetReportHistoryLimitCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetReportHistoryLimitCompletedEventArgs.IsSystem">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetReportHistoryLimitCompletedEventArgs.SystemLimit">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListReportHistoryCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListReportHistoryCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ListReportHistoryCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.DeleteReportHistorySnapshotCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.FindItemsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.FindItemsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.FindItemsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CreateScheduleCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CreateScheduleCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CreateScheduleCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.DeleteScheduleCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetSchedulePropertiesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetSchedulePropertiesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetSchedulePropertiesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetSchedulePropertiesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListScheduledReportsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListScheduledReportsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ListScheduledReportsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListSchedulesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListSchedulesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ListSchedulesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.PauseScheduleCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ResumeScheduleCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CreateSubscriptionCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CreateSubscriptionCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CreateSubscriptionCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CreateDataDrivenSubscriptionCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CreateDataDrivenSubscriptionCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CreateDataDrivenSubscriptionCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetSubscriptionPropertiesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetDataDrivenSubscriptionPropertiesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetSubscriptionPropertiesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetSubscriptionPropertiesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetSubscriptionPropertiesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetSubscriptionPropertiesCompletedEventArgs.ExtensionSettings">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetSubscriptionPropertiesCompletedEventArgs.Description">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetSubscriptionPropertiesCompletedEventArgs.Active">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetSubscriptionPropertiesCompletedEventArgs.Status">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetSubscriptionPropertiesCompletedEventArgs.EventType">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetSubscriptionPropertiesCompletedEventArgs.MatchData">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetSubscriptionPropertiesCompletedEventArgs.Parameters">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetDataDrivenSubscriptionPropertiesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetDataDrivenSubscriptionPropertiesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetDataDrivenSubscriptionPropertiesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetDataDrivenSubscriptionPropertiesCompletedEventArgs.ExtensionSettings">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetDataDrivenSubscriptionPropertiesCompletedEventArgs.DataRetrievalPlan">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetDataDrivenSubscriptionPropertiesCompletedEventArgs.Description">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetDataDrivenSubscriptionPropertiesCompletedEventArgs.Active">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetDataDrivenSubscriptionPropertiesCompletedEventArgs.Status">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetDataDrivenSubscriptionPropertiesCompletedEventArgs.EventType">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetDataDrivenSubscriptionPropertiesCompletedEventArgs.MatchData">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetDataDrivenSubscriptionPropertiesCompletedEventArgs.Parameters">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.DeleteSubscriptionCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.PrepareQueryCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.PrepareQueryCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.PrepareQueryCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.PrepareQueryCompletedEventArgs.Changed">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.PrepareQueryCompletedEventArgs.ParameterNames">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetExtensionSettingsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetExtensionSettingsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetExtensionSettingsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ValidateExtensionSettingsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ValidateExtensionSettingsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ValidateExtensionSettingsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListSubscriptionsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListSubscriptionsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ListSubscriptionsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListSubscriptionsUsingDataSourceCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListSubscriptionsUsingDataSourceCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ListSubscriptionsUsingDataSourceCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListExtensionsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListExtensionsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ListExtensionsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListEventsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListEventsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ListEventsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.FireEventCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListTasksCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListTasksCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ListTasksCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListRolesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListRolesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ListRolesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CreateRoleCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.DeleteRoleCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetRolePropertiesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetRolePropertiesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetRolePropertiesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetRolePropertiesCompletedEventArgs.Description">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetRolePropertiesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetSystemPoliciesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetSystemPoliciesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetSystemPoliciesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetSystemPoliciesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetPoliciesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetPoliciesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetPoliciesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetPoliciesCompletedEventArgs.InheritParent">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetPoliciesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.InheritParentSecurityCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetSystemPermissionsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetSystemPermissionsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetSystemPermissionsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetPermissionsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetPermissionsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetPermissionsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.LogonUserCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.LogoffCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CreateModelCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.CreateModelCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.CreateModelCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetModelDefinitionCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetModelDefinitionCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetModelDefinitionCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetModelDefinitionCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetModelDefinitionCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.SetModelDefinitionCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListModelPerspectivesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListModelPerspectivesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ListModelPerspectivesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetUserModelCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetUserModelCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetUserModelCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListModelItemChildrenCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListModelItemChildrenCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ListModelItemChildrenCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetModelItemPermissionsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetModelItemPermissionsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetModelItemPermissionsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetModelItemPoliciesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GetModelItemPoliciesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetModelItemPoliciesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GetModelItemPoliciesCompletedEventArgs.InheritParent">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetModelItemPoliciesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.InheritModelItemParentSecurityCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.RemoveAllModelItemPoliciesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.SetModelDrillthroughReportsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListModelDrillthroughReportsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.ListModelDrillthroughReportsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.ListModelDrillthroughReportsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GenerateModelCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.GenerateModelCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.GenerateModelCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.RegenerateModelCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BZFramework.ReportService2005.RegenerateModelCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BZFramework.ReportService2005.RegenerateModelCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+    </members>
+</doc>
