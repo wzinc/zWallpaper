@@ -1,18 +1,10 @@
 zWallpaper
 ==========
 
-      W          W       l l
-zzzzz  W   WW   W        l l
-   z   W   WW   W   aaaa l l pppp  aaaa pppp eeee rrrr
-  z     W W  W W   a   a l l p  p a   a p  p e e  r
-zzzzz    W    W     aaaa l l pppp  aaaa pppp eeee r
-                             p          p
-                             p          p
+	2008 by Bill Zink
+	http://www.gnu.org/licenses/gpl-3.0.html
 
-2008 by Bill Zink
-http://www.gnu.org/licenses/gpl-3.0.html
-
-	zWallpaper is a free, open-source (GPLv3) desktop
+zWallpaper is a free, open-source (GPLv3) desktop
 background manager for Windows. It mimics a lot of
 functionality seen in OS X's Desktop Background preference
 pane. It allows you to set different backgrounds, colors,
