@@ -3,6 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8239EA00-A38C-441C-A770-74D9277CA57E}"
 	ProjectSection(SolutionItems) = preProject
+		References\BZFramework.dll = References\BZFramework.dll
+		References\BZFramework.pdb = References\BZFramework.pdb
+		References\BZFramework.xml = References\BZFramework.xml
 		GPL.rtf = GPL.rtf
 		ReadMe.txt = ReadMe.txt
 	EndProjectSection

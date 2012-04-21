@@ -1,10 +1,10 @@
-      W          W       l l
+	  W          W       l l
 zzzzz  W   WW   W        l l
    z   W   WW   W   aaaa l l pppp  aaaa pppp eeee rrrr
   z     W W  W W   a   a l l p  p a   a p  p e e  r
 zzzzz    W    W     aaaa l l pppp  aaaa pppp eeee r
-                             p          p
-                             p          p
+							 p          p
+							 p          p
 
 2012 by Bill Zink
 http://www.gnu.org/licenses/gpl-3.0.html
