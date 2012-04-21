@@ -1,7 +1,7 @@
 zWallpaper
 ==========
 
-	2008 by Bill Zink
+	2012 by Bill Zink
 	http://www.gnu.org/licenses/gpl-3.0.html
 
 zWallpaper is a free, open-source (GPLv3) desktop
